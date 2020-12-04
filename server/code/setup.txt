@@ -1,13 +1,15 @@
 Assuming you already have python installed:
-1. Install virtualenv:
+1. Install virtualenv (if you don't already have it):
     - `pip install virtualenv`
     - this creates virtual environment where all packages will be installed (similar to `npm init`)
-2. Activate virtual environment
+2. Create virtual environment directory
+     - `virtualenv venv`
+3. Activate virtual environment
     - Windows: `source venv/Scripts/activate`
     - OS/Linux: `source venv/bin/activate` (I think)
     - you should see `(venv)` in your terminal
-3. Install packages
+4. Install packages
     - `pip install -r requirements.txt`
     - Installs all packages outlined in this file
-4. Run server
+5. Run server
     - `python code/app.py`
