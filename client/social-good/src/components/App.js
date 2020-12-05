@@ -1,11 +1,11 @@
 import '../styles.css';
-import Carousel from './Carousel';
+import Home from './home/Home';
 
 function App() {
   return (
     <div className='app-container'>
-      <Carousel />
-    </div>    
+      <Home />
+    </div>
   );
 }
 

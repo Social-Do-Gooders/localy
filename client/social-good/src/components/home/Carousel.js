@@ -1,7 +1,7 @@
 import React from 'react';
-import placeholder1 from '../images/carousel/placeholder1.jpg';
-import placeholder2 from '../images/carousel/placeholder2.jpg';
-import placeholder3 from '../images/carousel/placeholder3.jpg';
+import placeholder1 from '../../images/carousel/placeholder1.jpg';
+import placeholder2 from '../../images/carousel/placeholder2.jpg';
+import placeholder3 from '../../images/carousel/placeholder3.jpg';
 
 
 function Carousel(){

@@ -4,8 +4,18 @@
   margin-right: 10%;
 }
 
+.app-color{
+  background-color: #28df99;
+}
+
 /* Carousel component */
 .carousel-img{
   height: 70vh;
   width: 100%;
+}
+
+/* Feature Header component */
+.feature-text{
+  text-align: center;
+  font-size: 50px;
 }
