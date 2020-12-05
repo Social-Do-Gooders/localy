@@ -6,6 +6,12 @@
   height: 70vh;
   width: 100%;
 }
+.carousel-caption h5{
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  padding: 20px 0;
+}
 
 /* Feature Header component */
 .feature-header{

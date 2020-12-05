@@ -13,22 +13,19 @@ function Carousel(){
         <div className="carousel-item active">
           <img src={placeholder1} className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h5>Help a local business with funding</h5>
           </div>
         </div>
         <div className="carousel-item">
           <img src={placeholder2} className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h5>Attend knowledge sharing meetups in your locality</h5>
           </div>
         </div>
         <div className="carousel-item">
           <img src={placeholder3} className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h5>Get caught up with the latest business news</h5>
           </div>
         </div>
       </div>
