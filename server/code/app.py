@@ -1,13 +1,25 @@
-# IMPORT
-from flask import Flask
+#### IMPORT
 
-# APP SETUP
+# python imports
+from flask import Flask
+from flask_restful import Api
+
+# project imports
+from resources.user import UserList
+
+#### APP SETUP
 app = Flask(__name__)
+
+# config Api to app
+api = Api(app)
 
 # ROUTES
 @app.route('/')
 def index():
     return "Hello World"
+
+#### API
+api.add_resource(UserList, '/users')
 
 
 # Run app
