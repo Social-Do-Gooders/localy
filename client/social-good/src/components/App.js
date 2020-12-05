@@ -1,5 +1,5 @@
 import Home from './home/Home';
-import Header from './Header';
+import Header from './utils/Header';
 import '../css/general.css';
 import '../css/component.css';
 
