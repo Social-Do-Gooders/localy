@@ -30,7 +30,7 @@
 .intro-grid-img{
   width: 300px;
   height: 150px;
-  margin: 0 10px;
+  margin-right: 20px;
 }
 .intro-grid-scroll{
   display: flex;
@@ -39,10 +39,10 @@
 .intro-btn{
   margin-top: 20px;
   height: 40px;
-  width: 100px;
   background-color: #206a5d;
   color: white;
   border-radius: 5px;
+  padding: 0 10px;
 }
 .intro-btn:hover{
   background-color: #065446;
