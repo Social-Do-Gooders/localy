@@ -24,9 +24,11 @@ function FeatureHeader({text, feature}){
   }
 
   return(
-    <div className='feature-header'>
-      <p ><img src={imgSrc} className='feature-header-icon' alt='feature icon'/></p>
-      <h1 className='feature-text'>{text}</h1>
+    <div className='app-container'>
+      <div className='feature-header'>
+        <img src={imgSrc} className='feature-header-icon' alt='feature icon'/>
+        <p className='feature-text'>{text}</p>
+      </div>
     </div>
   );
 }
