@@ -1,9 +1,10 @@
-import '../styles.css';
 import Home from './home/Home';
+import '../css/general.css';
+import '../css/component.css';
 
 function App() {
   return (
-    <div className='app-container'>
+    <div>
       <Home />
     </div>
   );

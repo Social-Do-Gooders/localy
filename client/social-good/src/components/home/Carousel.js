@@ -7,6 +7,7 @@ import placeholder3 from '../../images/carousel/placeholder3.jpg';
 function Carousel(){
 
   return (
+    <div className='app-container carousel-comp'>
     <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
@@ -39,6 +40,7 @@ function Carousel(){
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="sr-only">Next</span>
       </a>
+    </div>
     </div>
   );
 }

@@ -1,0 +1,39 @@
+/* General */
+/* Works on Chrome/Edge/Safari */
+body::-webkit-scrollbar {
+  width: 9px;
+}
+body::-webkit-scrollbar-track {
+  background: #ebecf1;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #2ec1ac;
+  border-radius: 20px;
+}
+
+body{
+  color: #212529;
+}
+
+div::-webkit-scrollbar {
+  height: 9px;
+}
+div::-webkit-scrollbar-thumb {
+  background-color: #2ec1ac;
+  border-radius: 20px;
+}
+
+.app-container{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.app-color{
+  background-color: #28df99;
+}
+
+.app-rule{
+  width: 50%;
+  margin-bottom: 80px;
+  margin-top: 50px;
+}

@@ -18,9 +18,10 @@ function HomeFeatures() {
 
   return (<div>
     {
-      featuress.map((item,index) => <div>
+      features.map((item,index) => <div>
         <FeatureHeader key={index} text={item.header} feature={item.feature}/>
         <FeatureIntroGrid key={index} feature={item.feature}/>
+        {index !== features.length-1 && <hr className='app-rule'/>}
       </div>)
     }
   </div>);
