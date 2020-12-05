@@ -1,26 +1,26 @@
 import React from 'react';
-import placeholder1 from '../../images/carousel/placeholder1.jpg';
-import placeholder2 from '../../images/carousel/placeholder2.jpg';
-import placeholder3 from '../../images/carousel/placeholder3.jpg';
+import fund from '../../images/home-icons/fund.svg';
+import meeting from '../../images/home-icons/meeting.svg';
+import news from '../../images/home-icons/newspaper.svg';
 
 function FeatureHeader({text, feature}){
   let imgSrc;
 
   switch(feature){
     case 'fund':
-    imgSrc = placeholder1;
+    imgSrc = fund;
     break;
 
     case 'schedule':
-    imgSrc = placeholder2;
+    imgSrc = meeting;
     break;
 
     case 'news':
-    imgSrc = placeholder3;
+    imgSrc = news;
     break;
 
     default:
-    imgSrc = placeholder1;
+    imgSrc = fund;
   }
 
   return(
