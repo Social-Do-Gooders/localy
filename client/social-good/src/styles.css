@@ -15,7 +15,16 @@
 }
 
 /* Feature Header component */
+.feature-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .feature-text{
   text-align: center;
   font-size: 50px;
+}
+.feature-header-icon{
+  width: 30px;
+  height: 30px;
 }
