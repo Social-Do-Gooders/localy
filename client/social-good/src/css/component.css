@@ -68,3 +68,9 @@
 .intro-btn:hover{
   background-color: #065446;
 }
+
+
+/* Card component */
+.grid-card{
+  height: 250px;
+}
