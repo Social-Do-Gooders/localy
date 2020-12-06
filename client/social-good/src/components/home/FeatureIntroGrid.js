@@ -1,4 +1,3 @@
-import React from 'react';
 import {useHistory} from 'react-router-dom';
 import placeholder1 from '../../images/carousel/placeholder1.jpg';
 import placeholder2 from '../../images/carousel/placeholder2.jpg';

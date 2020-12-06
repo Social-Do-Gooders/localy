@@ -1,4 +1,3 @@
-import React from 'react';
 import FeatureHeader from './FeatureHeader';
 import FeatureIntroGrid from './FeatureIntroGrid';
 

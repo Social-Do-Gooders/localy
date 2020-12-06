@@ -1,4 +1,3 @@
-import React from 'react';
 import fund from '../../images/home-icons/fund.svg';
 import meeting from '../../images/home-icons/meeting.svg';
 import news from '../../images/home-icons/newspaper.svg';
