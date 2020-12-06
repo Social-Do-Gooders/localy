@@ -5,7 +5,7 @@ from flask import Flask
 from flask_restful import Api
 
 # project imports
-from resources.user import UserList
+from resources.user import Users
 
 #### APP SETUP
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def index():
     return "Hello World"
 
 #### API
-api.add_resource(UserList, '/users')
+api.add_resource(Users, '/users')
 
 
 # Run app

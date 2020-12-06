@@ -10,7 +10,7 @@ users = [
 
 
 
-class UserList(Resource):
+class Users(Resource):
 
     # GET method
     def get(self):
