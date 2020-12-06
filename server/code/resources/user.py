@@ -21,7 +21,7 @@ for _ in range(10):
     user['email_address'] = fake.email()
     user['password'] = fake.password()
     user['address'] = fake.address()
-    #user['date_of_birth'] = fake.date_of_birth()
+    user['date_of_birth'] = fake.date()
     user['organizations_following'] = [fake.company() for _ in range(random.randint(1,3))]
     user['users_following'] = [fake.name() for _ in range(random.randint(1,3))]
     user['services'] = [fake.job() for _ in range(random.randint(1,3))]
