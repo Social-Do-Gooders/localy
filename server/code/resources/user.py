@@ -29,7 +29,7 @@ for _ in range(10):
     # append to list
     users.append(user)
 
-
+#### RESOURCES
 
 class Users(Resource):
 
