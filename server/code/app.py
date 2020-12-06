@@ -7,6 +7,7 @@ from flask_restful import Api
 # project imports
 from resources.user import Users
 from resources.organization import Organizations
+from resources.article import Articles
 
 #### APP SETUP
 app = Flask(__name__)
@@ -22,6 +23,7 @@ def index():
 #### API
 api.add_resource(Users, '/users')
 api.add_resource(Organizations, '/organizations')
+api.add_resource(Articles, '/articles')
 
 
 # Run app
