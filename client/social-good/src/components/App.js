@@ -1,9 +1,8 @@
 import {Switch, Route} from 'react-router-dom';
 import Header from './utils/Header';
 import Home from './home/Home';
-import Business from './business/Business';
-import Meetups from './meetups/Meetups';
-import News from './news/News';
+import List from './grid/List';
+
 import '../css/general.css';
 import '../css/component.css';
 
@@ -17,15 +16,15 @@ function App() {
         </Route>
 
         <Route exact path='/business'>
-          <Business />
+          <List feature='business'/>
         </Route>
 
         <Route exact path='/meetups'>
-          <Meetups />
+          <List feature='meetups'/>
         </Route>
 
         <Route exact path='/news'>
-          <News />
+          <List feature='news'/>
         </Route>
       </Switch>
 
