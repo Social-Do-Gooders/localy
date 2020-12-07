@@ -18,10 +18,8 @@ for _ in range(10):
     user['id'] = fake.uuid4()
     user['first_name'] = fake.first_name()
     user['last_name'] = fake.last_name()
-    user['email_address'] = fake.email()
-    user['password'] = fake.password()
-    user['address'] = fake.address()
-    user['date_of_birth'] = fake.date()
+    user['email_address'] = f"{user['first_name']}@{user['last_name']}"
+    user['password'] = "password"
     user['organizations_following'] = [fake.company() for _ in range(random.randint(1,3))]
     user['users_following'] = [fake.name() for _ in range(random.randint(1,3))]
     user['services'] = [fake.job() for _ in range(random.randint(1,3))]

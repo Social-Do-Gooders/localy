@@ -21,6 +21,7 @@ for _ in range(10):
     organization['address'] = fake.address()
     organization['about'] = fake.paragraph()
     organization['followers'] = [fake.name() for _ in range(random.randint(1, 5))]
+    organization['image'] = fake.image_url()
 
     # append to list
     organizations.append(organization)
