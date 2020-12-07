@@ -5,7 +5,9 @@ import Home from './home/Home';
 import List from './grid/List';
 
 import '../css/general.css';
-import '../css/component.css';
+import '../css/grid.css';
+import '../css/home.css';
+import '../css/utils.css';
 
 function App() {
   return (
