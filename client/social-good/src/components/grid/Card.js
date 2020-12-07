@@ -1,13 +1,14 @@
-import image from '../../images/carousel/placeholder1.jpg';
 
-function Card({feature}){
+function Card({feature, imgSrc, title}){
+  let max = 50;
+  let cardTitle = title.length > max? title.substr(0, max) + "..." : title;
 
   return(
     <div>
-      <div className="card">
-        <img src={image} className="card-img-top grid-card" alt={feature}/>
+      <div className="card grid-card">
+        <img src={imgSrc} className="card-img-top" alt={feature}/>
           <div className="card-body">
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p className="card-text">{cardTitle}</p>
           </div>
         </div>
 

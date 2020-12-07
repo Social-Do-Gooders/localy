@@ -72,5 +72,9 @@
 
 /* Card component */
 .grid-card{
+  margin-top: 20px;
+}
+
+.grid-card img{
   height: 250px;
 }
