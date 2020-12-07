@@ -124,6 +124,13 @@
   border-bottom-style: solid;
   border-top-color: grey;
   border-bottom-color: grey;
+
+}
+.filter-title{
+  text-align: center;
+  margin-bottom: 0;
+}
+.filter-flex{
   display: flex;
   justify-content: center;
 }

@@ -24,9 +24,13 @@ function Filter({feature}){
 
   return (
     <div className='bg-light filter'>
-      <div className='filter-inner-bar'>
-        {filterItems.map((item, index) => <FilterItem key={index} item={item} />)}
+      <p className='filter-title'><em>Filters</em></p>
+      <div className='filter-flex'>
+        <div className='filter-inner-bar'>
+          {filterItems.map((item, index) => <FilterItem key={index} item={item} />)}
+        </div>
       </div>
+
 
 
     </div>
