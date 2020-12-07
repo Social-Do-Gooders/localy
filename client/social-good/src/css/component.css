@@ -110,3 +110,28 @@
 .grid-card img{
   height: 250px;
 }
+
+/* Filter component */
+.filter{
+  padding: 10px 0;
+  border-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: grey;
+  border-bottom-color: grey;
+  display: flex;
+  justify-content: center;
+}
+.filter-inner-bar{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.filter-item{
+  border-radius: 20px;
+  border-color: grey;
+  padding: 10px 40px;
+  margin: 10px;
+}
+.filter-time{
+  display: inline;
+}
