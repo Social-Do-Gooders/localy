@@ -101,6 +101,11 @@
   background-color: #065446;
 }
 
+/* List component */
+.list-title{
+  text-align: center;
+}
+
 
 /* Card component */
 .grid-card{

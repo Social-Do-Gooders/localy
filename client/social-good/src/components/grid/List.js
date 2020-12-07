@@ -8,7 +8,8 @@ function List({feature}) {
 
   return (
     <div>
-      <Filter feature={feature}/>    
+      <h3 className='list-title'>Showing {feature} list</h3>
+      <Filter feature={feature}/>
       <div className='app-container'>
         <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
 
