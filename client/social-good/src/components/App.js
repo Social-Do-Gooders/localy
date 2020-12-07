@@ -1,5 +1,6 @@
 import {Switch, Route} from 'react-router-dom';
 import Header from './utils/Header';
+import Footer from './utils/Footer';
 import Home from './home/Home';
 import List from './grid/List';
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <div>
       <Header />
+
       <Switch>
         <Route exact path='/'>
           <Home />
@@ -28,6 +30,7 @@ function App() {
         </Route>
       </Switch>
 
+      <Footer />
     </div>
   );
 }
