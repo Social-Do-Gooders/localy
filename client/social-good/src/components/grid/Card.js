@@ -6,7 +6,7 @@ function Card({feature, imgSrc, title}){
   return(
     <div>
       <div className="card grid-card">
-        <img src={imgSrc} className="card-img-top" alt={feature}/>
+        <img src={imgSrc} loading='lazy' className="card-img-top" alt={feature}/>
           <div className="card-body">
             <p className="card-text">{cardTitle}</p>
           </div>

@@ -40,7 +40,7 @@ function FeatureIntroGrid({feature, altText, btnText}){
       <div className='app-container'>
         <div className='intro-grid-scroll'>
           {data.map((item, index) => <div className='intro-grid-img-contain'>
-            <img key={index} src={imgSrc}
+            <img key={index} src={imgSrc} loading='lazy'
             className='intro-grid-img' alt={altText}/>
             <p className='intro-grid-img-content'>Name of object</p>
           </div>)}

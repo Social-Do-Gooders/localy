@@ -1,3 +1,4 @@
+import Pagination from '@material-ui/lab/Pagination';
 import Card from './Card';
 import Filter from './Filter';
 import image from '../../images/carousel/placeholder1.jpg';
@@ -19,6 +20,7 @@ function List({feature}) {
 
         </div>
 
+        <Pagination className='pagination' count={2} />
       </div>
     </div>
     );

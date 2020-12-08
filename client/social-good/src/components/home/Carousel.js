@@ -10,19 +10,19 @@ function Carousel(){
     <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={placeholder1} className="carousel-img" alt="placeholder"/>
+          <img src={placeholder1} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
             <h5>Help a local business with funding</h5>
           </div>
         </div>
         <div className="carousel-item">
-          <img src={placeholder2} className="carousel-img" alt="placeholder"/>
+          <img src={placeholder2} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
             <h5>Attend knowledge sharing meetups in your locality</h5>
           </div>
         </div>
         <div className="carousel-item">
-          <img src={placeholder3} className="carousel-img" alt="placeholder"/>
+          <img src={placeholder3} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
             <h5>Get caught up with the latest business news</h5>
           </div>
