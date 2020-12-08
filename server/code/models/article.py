@@ -6,6 +6,7 @@ class ArticleModel(db.Document):
     content = db.StringField(required=True)
     author = db.StringField(required=True)
     date = db.DateTimeField()
+    article_type = db.StringField()
    
     meta = {'collection': 'articles'}
 

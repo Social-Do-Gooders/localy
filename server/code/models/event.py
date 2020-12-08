@@ -8,6 +8,7 @@ class EventModel(db.Document):
     about = db.StringField(required=True)
     attendees = db.ListField(default=[])
     date = db.DateTimeField()
+    event_type = db.StringField()
   
     meta = {'collection': 'events'}
 
