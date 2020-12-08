@@ -19,7 +19,7 @@ for _ in range(10):
     organization['name'] = fake.company()
     organization['owner'] = fake.name()
     organization['address'] = fake.address()
-    organization['about'] = fake.paragraph()
+    organization['about'] = fake.text()
     organization['followers'] = [fake.name() for _ in range(random.randint(1, 5))]
     organization['image'] = fake.image_url()
 
