@@ -3,6 +3,9 @@
 # python imports
 from flask import Flask
 from flask_restful import Api
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 # project imports
 from resources.user import Users
@@ -13,6 +16,11 @@ from resources.event import Events
 
 #### APP SETUP
 app = Flask(__name__)
+
+# config db to app
+app.config['MONGODB_SETTINGS'] = {
+    'host': os.environ.get('DB_URI')
+}
 
 # config Api to app
 api = Api(app)

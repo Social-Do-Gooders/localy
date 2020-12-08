@@ -2,3 +2,4 @@ Faker
 Flask
 Flask-RESTful
 flask-mongoengine
+python-dotenv
