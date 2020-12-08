@@ -13,6 +13,8 @@ from resources.organization import Organizations
 from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
+from db import db
+from models.user import UserModel
 
 #### APP SETUP
 app = Flask(__name__)
@@ -28,7 +30,9 @@ api = Api(app)
 # ROUTES
 @app.route('/')
 def index():
-    return "Hello World"
+    user = UserModel(first_name='alice', last_name='smith', email_address='alice@smith.com', password='password')
+    user.save()
+    return {'Users': UserModel.objects()}
 
 #### API
 api.add_resource(Users, '/users')
@@ -40,4 +44,5 @@ api.add_resource(Events, '/events')
 
 # Run app
 if __name__ == "__main__":
+    db.init_app(app)
     app.run(port=5000, debug=True)
