@@ -4,6 +4,7 @@ import Footer from './utils/Footer';
 import Home from './home/Home';
 import List from './grid/List';
 import Item from './item/Item';
+import Display from './Articles/Display'
 
 import '../css/general.css';
 import '../css/grid.css';
@@ -31,6 +32,7 @@ function App() {
 
         <Route exact path='/news'>
           <List feature='news'/>
+          <Display/>
         </Route>
 
         <Route exact path='/:feature/:id'>
