@@ -31,7 +31,6 @@ function App() {
         </Route>
 
         <Route exact path='/news'>
-          <List feature='news'/>
           <Display/>
         </Route>
 
