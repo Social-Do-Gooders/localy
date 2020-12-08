@@ -1,6 +1,15 @@
-
+import {useDispatch} from 'react-redux';
+import {setNews} from '../../store/actions/news';
 
 function FilterItem({item}){
+  const dispatch = useDispatch();
+
+  let first = [1,2,3,4,5,6,7,8];
+  let second = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+  function handleOnClick(){
+    dispatch(setNews(second));
+  }
 
   if(item === 'time'){
 
@@ -20,7 +29,7 @@ function FilterItem({item}){
   }
 
   return(
-    <button type="button" className="btn btn-light filter-item">
+    <button type="button" className="btn btn-light filter-item" onClick={handleOnClick}>
       {item}
     </button>
   )
