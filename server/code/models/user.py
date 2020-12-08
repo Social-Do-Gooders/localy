@@ -11,8 +11,6 @@ class UserModel(db.Document):
     services = db.ListField(default=[])
   
     meta = {'collection': 'users'}
-    
-  
 
     def json(self):
-        return {**self.kwargs}
+        return self.to_json()

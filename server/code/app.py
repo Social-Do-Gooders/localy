@@ -14,7 +14,6 @@ from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
 from db import db
-from models.user import UserModel
 
 #### APP SETUP
 app = Flask(__name__)
@@ -27,14 +26,12 @@ app.config['MONGODB_SETTINGS'] = {
 # config Api to app
 api = Api(app)
 
-# ROUTES
-@app.route('/')
-def index():
-    user = UserModel(first_name='alice', last_name='smith', email_address='alice@smith.com', password='password')
-    user.save()
-    return {'Users': UserModel.objects()}
+
 
 #### API
+@app.route('/')
+def index():
+    return 'Hello World'
 api.add_resource(Users, '/users')
 api.add_resource(Organizations, '/organizations')
 api.add_resource(Articles, '/articles')

@@ -1,6 +1,7 @@
 from flask_restful import Resource
 from faker import Faker
 import random
+from models.user import UserModel
 
 #### GENERATE FAKE DATA
 
@@ -33,4 +34,4 @@ class Users(Resource):
 
     # GET method
     def get(self):
-        return {'users': users}
+        return {'users': [user.json() for user in UserModel.objects()]}
