@@ -6,11 +6,11 @@ function Filter({feature}){
   let filterItems;
 
   switch(feature){
-    case 'business':
+    case 'organization':
     filterItems = businessTags;
     break;
 
-    case 'meetups':
+    case 'meetup':
     filterItems =  [...meetupsTags, 'time'] ;
     break;
 

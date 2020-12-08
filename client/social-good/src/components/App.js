@@ -21,12 +21,12 @@ function App() {
           <Home />
         </Route>
 
-        <Route exact path='/business'>
-          <List feature='business'/>
+        <Route exact path='/organization'>
+          <List feature='organization'/>
         </Route>
 
-        <Route exact path='/meetups'>
-          <List feature='meetups'/>
+        <Route exact path='/meetup'>
+          <List feature='meetup'/>
         </Route>
 
         <Route exact path='/news'>

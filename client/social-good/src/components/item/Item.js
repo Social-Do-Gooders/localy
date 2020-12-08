@@ -10,7 +10,7 @@ function Item(){
 
   let action;
 
-  if(feature === 'business'){
+  if(feature === 'organization'){
     action = 'Fund organization';
   }else{
     action = 'Attend meetup';

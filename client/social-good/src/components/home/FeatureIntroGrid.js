@@ -8,31 +8,27 @@ function FeatureIntroGrid({feature, altText, btnText}){
   let history = useHistory();
 
   let data = [1,2,3,4,5,6];
-  let imgSrc, path;
+  let imgSrc;
 
   switch(feature){
-    case 'fund':
+    case 'organization':
     imgSrc = placeholder1;
-    path = 'business';
     break;
 
-    case 'schedule':
+    case 'meetup':
     imgSrc = placeholder2;
-    path = 'meetups';
     break;
 
     case 'news':
     imgSrc = placeholder3;
-    path = 'news';
     break;
 
     default:
     imgSrc = placeholder1;
-    path = 'business';
   }
 
   function handleOnClick(){
-    history.push(path);
+    history.push(feature);
   }
 
   return (

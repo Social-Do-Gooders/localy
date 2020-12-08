@@ -6,11 +6,11 @@ function FeatureHeader({text, feature}){
   let imgSrc;
 
   switch(feature){
-    case 'fund':
+    case 'organization':
     imgSrc = fund;
     break;
 
-    case 'schedule':
+    case 'meetup':
     imgSrc = meeting;
     break;
 

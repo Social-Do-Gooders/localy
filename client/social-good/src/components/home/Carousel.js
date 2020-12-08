@@ -12,7 +12,7 @@ function Carousel(){
         <div className="carousel-item active">
           <img src={placeholder1} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div class="carousel-caption d-none d-md-block">
-            <h5>Help a local business with funding</h5>
+            <h5>Help a local organizations with funding</h5>
           </div>
         </div>
         <div className="carousel-item">
