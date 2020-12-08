@@ -1,17 +1,23 @@
+import {useHistory} from 'react-router-dom';
 
-function Card({feature, imgSrc, title}){
+function Card({feature, imgSrc, title, id}){
+  let history = useHistory();
+
   let max = 50;
   let cardTitle = title.length > max? title.substr(0, max) + "..." : title;
 
-  return(
-    <div>
-      <div className="card grid-card">
-        <img src={imgSrc} loading='lazy' className="card-img-top" alt={feature}/>
-          <div className="card-body">
-            <p className="card-text">{cardTitle}</p>
-          </div>
-        </div>
+  function handleOnClick(){
+    history.push(`${feature}/${id}`);
+  }
 
+  return(
+    <div className="card grid-card">
+      <img src={imgSrc} loading='lazy' onClick={handleOnClick}
+        className="card-img-top" alt={feature}/>
+
+      <div className="card-body">
+        <p className="card-text">{cardTitle}</p>
+      </div>
     </div>
   )
 }

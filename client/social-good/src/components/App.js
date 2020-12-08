@@ -3,6 +3,7 @@ import Header from './utils/Header';
 import Footer from './utils/Footer';
 import Home from './home/Home';
 import List from './grid/List';
+import Item from './item/Item';
 
 import '../css/general.css';
 import '../css/grid.css';
@@ -29,6 +30,10 @@ function App() {
 
         <Route exact path='/news'>
           <List feature='news'/>
+        </Route>
+
+        <Route exact path='/:feature/:id'>
+          <Item />
         </Route>
       </Switch>
 

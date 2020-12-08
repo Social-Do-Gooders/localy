@@ -15,7 +15,7 @@ function List({feature}) {
         <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
 
           {data.map((item, index) => <div key={index} className='col'>
-            <Card feature={feature} imgSrc={image} title={dummyTitle}/>
+            <Card feature={feature} id={index} imgSrc={image} title={dummyTitle}/>
           </div>)}
 
         </div>
