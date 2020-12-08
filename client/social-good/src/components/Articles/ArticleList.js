@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '../grid/Card';
+import image from '../../images/carousel/placeholder1.jpg';
 
 const useStyles = makeStyles((theme) => ({
   a: {
@@ -16,7 +17,7 @@ const ArticleItem = (props) => {
   return (
     <div>
       <a className={classes.a} href={article.url} target="_blank">
-        <Card feature={article.title} imgSrc={article.urlToImage} title={article.title}/>
+        <Card feature={article.title} imgSrc={article.urlToImage == null ? image : article.urlToImage} title={article.title}/>
       </a>
     </div>
   );

@@ -41,7 +41,7 @@ class Display extends React.Component {
       <div>
          <h3 className='list-title'>Showing News list</h3>
         <div className='bg-light filter'>
-          <p className='filter-title'><em>Filters</em></p>
+          <p className='filter-title'><em>Categories</em></p>
           <div className='filter-flex'>
             <div className='filter-inner-bar'>
               <button type="button" className="btn btn-light filter-item" onClick={() => this.hideComponent("showHideTech")}>
