@@ -1,0 +1,3 @@
+Faker
+Flask
+Flask-RESTful
