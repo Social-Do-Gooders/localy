@@ -11,9 +11,8 @@ function Card({feature, imgSrc, title, id}){
   }
 
   return(
-    <div className="card grid-card">
-      <img src={imgSrc} loading='lazy' onClick={handleOnClick}
-        className="card-img-top" alt={feature}/>
+    <div className="card grid-card" onClick={handleOnClick}>
+      <img src={imgSrc} loading='lazy' className="card-img-top" alt={feature}/>
 
       <div className="card-body">
         <p className="card-text">{cardTitle}</p>

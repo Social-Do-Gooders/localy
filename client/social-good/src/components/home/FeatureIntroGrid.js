@@ -1,13 +1,16 @@
 import {useHistory} from 'react-router-dom';
+import IntroCard from './IntroCard';
+
 import placeholder1 from '../../images/carousel/placeholder1.jpg';
 import placeholder2 from '../../images/carousel/placeholder2.jpg';
 import placeholder3 from '../../images/carousel/placeholder3.jpg';
 
 
 function FeatureIntroGrid({feature, altText, btnText}){
-  let history = useHistory();
+  const history = useHistory();
 
   let data = [1,2,3,4,5,6];
+  let title = 'Name of object';
   let imgSrc;
 
   switch(feature){
@@ -27,7 +30,7 @@ function FeatureIntroGrid({feature, altText, btnText}){
     imgSrc = placeholder1;
   }
 
-  function handleOnClick(){
+  function handleBtnOnClick(){
     history.push(feature);
   }
 
@@ -35,13 +38,12 @@ function FeatureIntroGrid({feature, altText, btnText}){
     <div className='intro-grid app-color'>
       <div className='app-container'>
         <div className='intro-grid-scroll'>
-          {data.map((item, index) => <div className='intro-grid-img-contain'>
-            <img key={index} src={imgSrc} loading='lazy'
-            className='intro-grid-img' alt={altText}/>
-            <p className='intro-grid-img-content'>Name of object</p>
+          {data.map((item, index) => <div key={'introGrid'+index} className='intro-grid-img-contain'>
+            <IntroCard feature={feature} id={index} title={title}
+              imgSrc={imgSrc} altText={altText}/>
           </div>)}
         </div>
-        <button type="button" className="app-btn" onClick={handleOnClick}>{btnText}</button>
+        <button type="button" className="app-btn" onClick={handleBtnOnClick}>{btnText}</button>
       </div>
     </div>
   );
