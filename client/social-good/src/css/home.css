@@ -57,14 +57,6 @@
   display: flex;
   overflow: auto;
 }
-.intro-btn{
-  margin-top: 20px;
-  height: 40px;
-  background-color: #206a5d;
-  color: white;
-  border-radius: 5px;
-  padding: 0 10px;
-}
 .intro-btn:hover{
   background-color: #065446;
 }

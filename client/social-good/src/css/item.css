@@ -1,0 +1,18 @@
+/* Item component */
+.item h2{
+  text-align: center;
+  margin-top: 30px;
+}
+.item img{
+  width: 100%;
+  height: 50vh;
+}
+.item-pill-group{
+  display: flex;
+  justify-content: flex-start;
+}
+.item-pill{
+  margin-right: 50px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
