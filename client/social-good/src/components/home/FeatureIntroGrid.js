@@ -45,7 +45,7 @@ function FeatureIntroGrid({feature, altText, btnText}){
             <p className='intro-grid-img-content'>Name of object</p>
           </div>)}
         </div>
-        <button type="button" className="intro-btn" onClick={handleOnClick}>{btnText}</button>
+        <button type="button" className="app-btn" onClick={handleOnClick}>{btnText}</button>
       </div>
     </div>
   );

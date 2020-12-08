@@ -9,6 +9,7 @@ import '../css/general.css';
 import '../css/grid.css';
 import '../css/home.css';
 import '../css/utils.css';
+import '../css/item.css';
 
 function App() {
   return (

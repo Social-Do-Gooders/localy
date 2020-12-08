@@ -37,3 +37,12 @@ div::-webkit-scrollbar-thumb {
   margin-bottom: 80px;
   margin-top: 50px;
 }
+
+.app-btn{
+  margin-top: 20px;
+  height: 40px;
+  background-color: #206a5d;
+  color: white;
+  border-radius: 5px;
+  padding: 0 10px;
+}
