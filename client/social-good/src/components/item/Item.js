@@ -1,9 +1,16 @@
+import {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import placeholder1 from '../../images/carousel/placeholder1.jpg';
 
 function Item(){
 
   const {feature} = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+
+  }, []);
+
   const dummyAddress = 'Lorem ipsum dolor sit amet';
   const tag = 'Ipsum elit';
   const owner = 'Lorem ipsum';
