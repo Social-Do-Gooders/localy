@@ -5,6 +5,7 @@ from models.user import UserModel
 from models.organization import OrganizationModel
 from models.event import EventModel
 from models.article import ArticleModel
+from models.service import ServiceModel
 
 
 # initialize Faker
@@ -101,7 +102,18 @@ for _ in range(10):
     article_model = ArticleModel(**article)
     articles.append(article_model)
 
-#### RESOURCES
+# initialize list
+services = []
+
+# generate services
+for _ in range(10):
+    service = {}
+    service['name'] = fake.job()
+
+    # append to list
+    service_model = ServiceModel(**service)
+    services.append(service_model)
+
 
 print("Users")
 print([f"{user.first_name} {user.last_name}" for user in users])
@@ -114,3 +126,6 @@ print([event.name for event in events])
 print('\n')
 print("Articles")
 print([article.title for article in articles])
+print('\n')
+print("Services")
+print([service.name for service in services])
