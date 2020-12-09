@@ -1,5 +1,4 @@
 from flask_restful import Resource
-
 from models.event import EventModel
 
 

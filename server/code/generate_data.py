@@ -4,6 +4,7 @@ import random
 from models.user import UserModel
 from models.organization import OrganizationModel
 from models.event import EventModel
+from models.article import ArticleModel
 
 
 # initialize Faker
@@ -67,7 +68,7 @@ for _ in range(10):
     # generate event
     event = {}
     event['name'] = fake.sentence()
-    event['organizer'] = fake.name()
+    #event['organizer'] = fake.name()
     event['location'] = fake.address()
     event['about'] = fake.text()
     event['attendees'] = []
@@ -80,11 +81,36 @@ for _ in range(10):
     events.append(event_model)
     
 
+# initialize list
+articles = []
+article_type = ['business news', 'tech news', 'science news', 'other']
+
+# generate articles
+for _ in range(10):
+
+    # generate article
+    article = {}
+    article['title'] = fake.sentence()
+    article['content'] = fake.text()
+    #article['author'] = fake.name()
+    article['date'] = fake.date()
+    article['article_type'] = article_type[random.randint(0, len(article_type)-1)]
+
+    
+    # append to list
+    article_model = ArticleModel(**article)
+    articles.append(article_model)
+
 #### RESOURCES
 
-
+print("Users")
 print([f"{user.first_name} {user.last_name}" for user in users])
 print('\n')
+print("Organizations")
 print([organization.name for organization in organizations])
 print('\n')
+print("Events")
 print([event.name for event in events])
+print('\n')
+print("Articles")
+print([article.title for article in articles])
