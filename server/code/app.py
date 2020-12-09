@@ -10,7 +10,7 @@ load_dotenv()
 
 # project imports
 from resources.user import Users
-from resources.organization import Organizations
+from resources.organization import Organizations, OrganizationName
 from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
@@ -43,6 +43,7 @@ def index():
     return 'Hello World'
   
 api.add_resource(Users, '/users')
+api.add_resource(OrganizationName, '/organization/<string:name>')
 api.add_resource(Organizations, '/organizations')
 api.add_resource(Articles, '/articles')
 api.add_resource(Funds, '/funds')
