@@ -3,6 +3,7 @@ import os
 # python imports
 from flask import Flask, request
 from flask_restful import Api
+from flask_cors import CORS
 
 # project imports
 from resources.user import Users
@@ -20,6 +21,7 @@ import json
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 #### APP SETUP
 app = Flask(__name__)
+CORS(app)
 
 # config Api to app
 api = Api(app)

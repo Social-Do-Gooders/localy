@@ -1,4 +1,5 @@
 import {useHistory} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import IntroCard from './IntroCard';
 
 import placeholder1 from '../../images/carousel/placeholder1.jpg';
@@ -6,28 +7,20 @@ import placeholder2 from '../../images/carousel/placeholder2.jpg';
 import placeholder3 from '../../images/carousel/placeholder3.jpg';
 
 
-function FeatureIntroGrid({feature, altText, btnText}){
+function FeatureIntroGrid({feature, btnText}){
   const history = useHistory();
+  let state = useSelector(state => state);
 
-  let data = [1,2,3,4,5,6];
+  let dummyData = [1,2,3,4,5,6];
   let title = 'Name of object';
+
+  let data;
   let imgSrc;
 
-  switch(feature){
-    case 'organization':
-    imgSrc = placeholder1;
-    break;
+  data = dummyData
 
-    case 'meetup':
-    imgSrc = placeholder2;
-    break;
-
-    case 'news':
-    imgSrc = placeholder3;
-    break;
-
-    default:
-    imgSrc = placeholder1;
+  if(feature === 'news'){
+    data = state.news;
   }
 
   function handleBtnOnClick(){
@@ -39,8 +32,7 @@ function FeatureIntroGrid({feature, altText, btnText}){
       <div className='app-container'>
         <div className='intro-grid-scroll'>
           {data.map((item, index) => <div key={'introGrid'+index} className='intro-grid-img-contain'>
-            <IntroCard feature={feature} id={index} title={title}
-              imgSrc={imgSrc} altText={altText}/>
+            <IntroCard feature={feature} id={index} item={item}/>
           </div>)}
         </div>
         <button type="button" className="app-btn" onClick={handleBtnOnClick}>{btnText}</button>

@@ -1,18 +1,35 @@
 import {useHistory} from 'react-router-dom';
+import defaultImg from '../../images/general/placeholder1.jpg';
 
-function IntroCard({feature, imgSrc, id, altText, title}){
+function IntroCard({feature, id, item}){
   const history = useHistory();
 
   const max = 30;
-  const cardTitle = title.length > max? title.substr(0, max) + "..." : title;
+  let cardTitle;
+  let handleOnClick;
+  let imgSrc = item.imgUrl? item.imgUrl: defaultImg;
 
-  function handleCardOnClick(){
+  if(feature === 'news'){
+    cardTitle = item.newsTitle;
+    handleOnClick = newsOnClick;
+  }else{
+    cardTitle = 'Name of object';
+    handleOnClick = defaultOnClick
+  }
+
+  function newsOnClick(){
+    window.open(item.newsUrl, '_blank');
+  }
+
+  function defaultOnClick(){
     history.push(`${feature}/${id}`);
   }
 
+  cardTitle = cardTitle.length > max? cardTitle.substr(0, max) + "..." : cardTitle;
+
   return(
-    <div  onClick={handleCardOnClick}>
-      <img src={imgSrc} loading='lazy' className='intro-grid-img' alt={altText}/>
+    <div  onClick={handleOnClick}>
+      <img src={imgSrc} loading='lazy' className='intro-grid-img' alt={cardTitle}/>
 
       <p className='intro-grid-img-content'>{cardTitle}</p>
     </div>
