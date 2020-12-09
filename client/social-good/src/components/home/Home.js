@@ -1,35 +1,16 @@
-import {useState, useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import {setNews} from '../../store/actions/news';
+import {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import Carousel from './Carousel';
 import HomeFeatures from './HomeFeatures';
 import Loading from '../utils/Loading';
+import {setInitial} from '../../controllers/home';
 
 function Home(){
-
-  let [load, setLoading] = useState(true);
-
-  const dispatch = useDispatch();
-
-  async function initialData(){
-    const newsOptions = {
-      'method': 'POST',
-      'body': JSON.stringify({type: 'business'}),
-      'headers': {
-        'content-type': 'application/json',
-      },
-    };
-
-    let response = await fetch('/server/news', newsOptions);
-    let resList = await response.json();
-
-    dispatch(setNews(resList));
-    setLoading(false);
-
-  }
+  let load = useSelector(state => state.loading);
+  let dispatch = useDispatch();
 
   useEffect(() => {
-    initialData();
+    setInitial(dispatch);
 
   },[]);
 
