@@ -10,7 +10,7 @@ load_dotenv()
 
 # project imports
 from resources.user import Users
-from resources.organization import Organizations
+from resources.organization import Organizations, OrganizationName
 from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
@@ -42,12 +42,13 @@ api = Api(app)
 def index():
     return 'Hello World'
   
-api.add_resource(Users, '/users')
-api.add_resource(Organizations, '/organizations')
-api.add_resource(Articles, '/articles')
-api.add_resource(Funds, '/funds')
-api.add_resource(Events, '/events')
-api.add_resource(Services, '/services')
+api.add_resource(Users, '/server/users')
+api.add_resource(OrganizationName, '/server/organization/<string:name>')
+api.add_resource(Organizations, '/server/organizations')
+api.add_resource(Articles, '/server/articles')
+api.add_resource(Funds, '/server/funds')
+api.add_resource(Events, '/server/events')
+api.add_resource(Services, '/server/services')
 
 # Fetch Articles
 def newsJSON(newsType):
