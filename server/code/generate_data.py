@@ -3,6 +3,7 @@ import random
 
 from models.user import UserModel
 from models.organization import OrganizationModel
+from models.event import EventModel
 
 
 # initialize Faker
@@ -55,6 +56,35 @@ for _ in range(10):
 
 
 
+
+# initialize list
+events = []
+event_type = ['tech', 'science', 'finance', 'artisan skills', 'health', 'education', 'art', 'other']
+
+# generate event
+for _ in range(10):
+
+    # generate event
+    event = {}
+    event['name'] = fake.sentence()
+    event['organizer'] = fake.name()
+    event['location'] = fake.address()
+    event['about'] = fake.text()
+    event['attendees'] = []
+    event['date'] = fake.date()
+    event['event_type'] = event_type[random.randint(0, len(event_type)-1)]
+
+
+    # append to list
+    event_model = EventModel(**event)
+    events.append(event_model)
+    
+
+#### RESOURCES
+
+
 print([f"{user.first_name} {user.last_name}" for user in users])
 print('\n')
 print([organization.name for organization in organizations])
+print('\n')
+print([event.name for event in events])
