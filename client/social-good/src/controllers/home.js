@@ -1,7 +1,5 @@
-import {loading} from '../store/actions/loading';
-import {setNews} from '../store/actions/news';
 
-export async function setInitial(dispatch){
+export async function setNewsInitial(){
   const newsOptions = {
     'method': 'POST',
     'body': JSON.stringify({type: 'business'}),
@@ -13,6 +11,5 @@ export async function setInitial(dispatch){
   let response = await fetch('/server/news', newsOptions);
   let resList = await response.json();
 
-  dispatch(setNews(resList));
-  dispatch(loading(false));
+  return resList;
 }

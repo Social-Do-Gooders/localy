@@ -1,7 +1,7 @@
 import FeatureHeader from './FeatureHeader';
 import FeatureIntroGrid from './FeatureIntroGrid';
 
-function HomeFeatures() {
+function HomeFeatures({data}) {
   let features = [
     {
       feature: 'organization',
@@ -22,7 +22,7 @@ function HomeFeatures() {
     {
       features.map((item,index) => <div key={'home'+index}>
         <FeatureHeader text={item.header} feature={item.feature}/>
-        <FeatureIntroGrid feature={item.feature} btnText={item.btnText}/>
+        <FeatureIntroGrid feature={item.feature} btnText={item.btnText} data={data}/>
         {index !== features.length-1 && <hr className='app-rule'/>}
       </div>)
     }

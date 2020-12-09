@@ -4,7 +4,6 @@ import defaultImg from '../../images/general/placeholder1.jpg';
 function IntroCard({feature, id, item}){
   const history = useHistory();
 
-  const max = 30;
   let cardTitle;
   let handleOnClick;
   let imgSrc = item.imgUrl? item.imgUrl: defaultImg;
@@ -25,6 +24,7 @@ function IntroCard({feature, id, item}){
     history.push(`${feature}/${id}`);
   }
 
+  const max = 30;
   cardTitle = cardTitle.length > max? cardTitle.substr(0, max) + "..." : cardTitle;
 
   return(

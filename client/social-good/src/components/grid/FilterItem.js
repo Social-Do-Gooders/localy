@@ -1,23 +1,27 @@
 import {useDispatch} from 'react-redux';
-import {setNews} from '../../store/actions/news';
+import {setNewsData} from '../../controllers/news';
 
 function FilterItem({item, feature}){
   const dispatch = useDispatch();
 
-  let first = [1,2,3,4,5,6,7,8];
-  let second = [1,2,3,4,5,6,7,8,9,10,11,12];
-
+  let handleOnClick;
   let customTitle;
 
   if(feature === 'news'){
     customTitle = `${item} news`;
+    handleOnClick = newsOnClick;
 
   }else{
     customTitle = item;
+    handleOnClick = defaultOnClick;
   }
 
-  function handleOnClick(){
-    dispatch(setNews(second));
+  function newsOnClick(){
+    setNewsData(dispatch, item);
+  }
+
+  function defaultOnClick(){
+
   }
 
   if(item === 'time'){
@@ -38,7 +42,7 @@ function FilterItem({item, feature}){
   }
 
   return(
-    <button type="button" className="btn btn-light filter-item" onClick={handleOnClick}>
+    <button type="button" className="btn btn-light filter-item" onClick={handleOnClick} >
       {customTitle}
     </button>
   )

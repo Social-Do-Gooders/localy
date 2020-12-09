@@ -1,16 +1,22 @@
-import {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useEffect, useState} from 'react';
 import Carousel from './Carousel';
 import HomeFeatures from './HomeFeatures';
 import Loading from '../utils/Loading';
-import {setInitial} from '../../controllers/home';
+import {setNewsInitial} from '../../controllers/home';
 
 function Home(){
-  let load = useSelector(state => state.loading);
-  let dispatch = useDispatch();
+  let dummyData = [1,2,3,4,5,6];
+  let [load, setLoad] = useState(true)
+  let [data, setData] = useState({organization: dummyData, meetups: dummyData, news: dummyData});
+
+  async function initial(){
+    let newsList = await setNewsInitial();
+    setData({...data, news: newsList});
+    setLoad(false);
+  }
 
   useEffect(() => {
-    setInitial(dispatch);
+    initial();
 
   },[]);
 
@@ -21,7 +27,7 @@ function Home(){
   return(
     <div>
       <Carousel />
-      <HomeFeatures />
+      <HomeFeatures data={data}/>
     </div>
   );
 }
