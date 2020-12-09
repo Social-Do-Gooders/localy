@@ -13,6 +13,7 @@ from resources.organization import Organizations
 from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
+from resources.service import Services
 from db import db
 
 #### APP SETUP
@@ -37,6 +38,7 @@ api.add_resource(Organizations, '/organizations')
 api.add_resource(Articles, '/articles')
 api.add_resource(Funds, '/funds')
 api.add_resource(Events, '/events')
+api.add_resource(Services, '/services')
 
 
 # Run app
