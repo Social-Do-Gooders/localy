@@ -3,11 +3,13 @@ import Header from './utils/Header';
 import Footer from './utils/Footer';
 import Home from './home/Home';
 import List from './grid/List';
+import Item from './item/Item';
 
 import '../css/general.css';
 import '../css/grid.css';
 import '../css/home.css';
 import '../css/utils.css';
+import '../css/item.css';
 
 function App() {
   return (
@@ -19,16 +21,20 @@ function App() {
           <Home />
         </Route>
 
-        <Route exact path='/business'>
-          <List feature='business'/>
+        <Route exact path='/organization'>
+          <List feature='organization'/>
         </Route>
 
-        <Route exact path='/meetups'>
-          <List feature='meetups'/>
+        <Route exact path='/meetup'>
+          <List feature='meetup'/>
         </Route>
 
         <Route exact path='/news'>
           <List feature='news'/>
+        </Route>
+
+        <Route exact path='/:feature/:id'>
+          <Item />
         </Route>
       </Switch>
 

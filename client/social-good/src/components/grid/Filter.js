@@ -6,11 +6,11 @@ function Filter({feature}){
   let filterItems;
 
   switch(feature){
-    case 'business':
+    case 'organization':
     filterItems = businessTags;
     break;
 
-    case 'meetups':
+    case 'meetup':
     filterItems =  [...meetupsTags, 'time'] ;
     break;
 
@@ -24,10 +24,10 @@ function Filter({feature}){
 
   return (
     <div className='bg-light filter'>
-      <p className='filter-title'><em>Filters</em></p>
+      <p className='filter-title'><em>Categories</em></p>
       <div className='filter-flex'>
         <div className='filter-inner-bar'>
-          {filterItems.map((item, index) => <FilterItem key={index} item={item} />)}
+          {filterItems.map((item, index) => <FilterItem key={index} item={item} feature={feature} />)}
         </div>
       </div>
 

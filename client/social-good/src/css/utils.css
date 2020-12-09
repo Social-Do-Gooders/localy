@@ -1,3 +1,10 @@
+/* Loading component */
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Header component */
 .header-item{
   padding-left: 10%;
