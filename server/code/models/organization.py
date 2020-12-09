@@ -20,3 +20,7 @@ class OrganizationModel(db.Document):
 
     def delete_from_db(self):
         self.delete()
+
+    @classmethod
+    def find_by_name(cls, name):
+        return OrganizationModel.objects(name=name).first()
