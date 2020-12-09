@@ -6,6 +6,9 @@ class ServiceModel(db.Document):
   
     meta = {'collection': 'services'}
 
+    def json(self):
+        return self.to_json()
+
     def save_to_db(self):
         self.save()
 
