@@ -17,4 +17,4 @@ class ServiceModel(db.Document):
 
     @classmethod
     def find_by_name(cls, name):
-        return ServiceModel.objects(name=name)
+        return ServiceModel.objects(name=name).first()
