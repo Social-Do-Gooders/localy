@@ -1,3 +1,4 @@
+import json
 from db import db
 
 class OrganizationModel(db.Document):
@@ -13,7 +14,7 @@ class OrganizationModel(db.Document):
     meta = {'collection': 'organizations'}
 
     def json(self):
-        return self.to_json()
+        return json.loads(self.to_json())
 
     def save_to_db(self):
         self.save()

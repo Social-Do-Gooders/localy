@@ -1,3 +1,4 @@
+import json
 from db import db
 
 class ServiceModel(db.Document):
@@ -7,7 +8,7 @@ class ServiceModel(db.Document):
     meta = {'collection': 'services'}
 
     def json(self):
-        return self.to_json()
+        return json.loads(self.to_json())
 
     def save_to_db(self):
         self.save()

@@ -1,3 +1,4 @@
+import json
 from db import db
 from models.organization import OrganizationModel
 from models.service import ServiceModel
@@ -15,7 +16,7 @@ class UserModel(db.Document):
     meta = {'collection': 'users'}
 
     def json(self):
-        return self.to_json()
+        return json.loads(self.to_json())
 
     def save_to_db(self):
         self.save()

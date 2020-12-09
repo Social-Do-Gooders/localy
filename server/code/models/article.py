@@ -1,3 +1,4 @@
+import json
 from db import db
 
 class ArticleModel(db.Document):
@@ -11,7 +12,7 @@ class ArticleModel(db.Document):
     meta = {'collection': 'articles'}
 
     def json(self):
-        return self.to_json()
+        return json.loads(self.to_json())
 
     def save_to_db(self):
         self.save()
