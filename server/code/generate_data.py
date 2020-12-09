@@ -15,7 +15,7 @@ fake = Faker()
 users = []
 
 # generate users
-for _ in range(20):
+for _ in range(100):
 
     # generate user
     user = {}
@@ -23,12 +23,9 @@ for _ in range(20):
     user['last_name'] = fake.last_name()
     user['email_address'] = f"{user['first_name'].lower()}@{user['last_name'].lower()}.com"
     user['password'] = "password"
-    user['organizations_following'] = []
-    user['users_following'] = []
-    user['services'] = []
-    #user['organizations_following'] = [fake.company() for _ in range(random.randint(1,3))]
-    #user['users_following'] = [fake.name() for _ in range(random.randint(1,3))]
-    #user['services'] = [fake.job() for _ in range(random.randint(1,3))]
+    user['organizations_following'] = [fake.company() for _ in range(random.randint(1,3))]
+    user['users_following'] = [fake.name() for _ in range(random.randint(1,3))]
+    user['services'] = [fake.job() for _ in range(random.randint(1,3))]
 
     # append to list
     user_model = UserModel(**user)
@@ -39,16 +36,16 @@ organizations = []
 organization_type = ['business', 'school', 'hospital', 'orphanage', 'other']
 
 # generate organizations
-for _ in range(10):
+for _ in range(50):
 
     # generate organization
     organization = {}
     organization['name'] = fake.company()
-    #organization['owner'] = fake.name()
+    organization['owner'] = fake.name()
     organization['address'] = fake.address()
     organization['about'] = fake.text()
     organization['followers'] = []
-    #organization['followers'] = [fake.name() for _ in range(random.randint(1, 5))]
+    organization['followers'] = [fake.name() for _ in range(random.randint(1, 5))]
     organization['image_url'] = fake.image_url()
     organization['organization_type'] = organization_type[random.randint(0, len(organization_type)-1)]
 
@@ -64,12 +61,12 @@ events = []
 event_type = ['tech', 'science', 'finance', 'artisan skills', 'health', 'education', 'art', 'other']
 
 # generate event
-for _ in range(10):
+for _ in range(50):
 
     # generate event
     event = {}
     event['name'] = fake.sentence()
-    #event['organizer'] = fake.name()
+    event['organizer'] = fake.name()
     event['location'] = fake.address()
     event['about'] = fake.text()
     event['attendees'] = []
@@ -87,13 +84,13 @@ articles = []
 article_type = ['business news', 'tech news', 'science news', 'other']
 
 # generate articles
-for _ in range(10):
+for _ in range(50):
 
     # generate article
     article = {}
     article['title'] = fake.sentence()
     article['content'] = fake.text()
-    #article['author'] = fake.name()
+    article['author'] = fake.name()
     article['date'] = fake.date()
     article['article_type'] = article_type[random.randint(0, len(article_type)-1)]
 
@@ -106,7 +103,7 @@ for _ in range(10):
 services = []
 
 # generate services
-for _ in range(10):
+for _ in range(100):
     service = {}
     service['name'] = fake.job()
 
@@ -115,17 +112,19 @@ for _ in range(10):
     services.append(service_model)
 
 
-print("Users")
-print([f"{user.first_name} {user.last_name}" for user in users])
-print('\n')
-print("Organizations")
-print([organization.name for organization in organizations])
-print('\n')
-print("Events")
-print([event.name for event in events])
-print('\n')
-print("Articles")
-print([article.title for article in articles])
-print('\n')
-print("Services")
-print([service.name for service in services])
+
+
+#print("Users")
+#print([f"{user.first_name} {user.last_name}" for user in users])
+#print('\n')
+#print("Organizations")
+#print([organization.name for organization in organizations])
+#print('\n')
+#print("Events")
+#print([event.name for event in events])
+#print('\n')
+#print("Articles")
+#print([article.title for article in articles])
+#print('\n')
+#print("Services")
+#print([service.name for service in services])
