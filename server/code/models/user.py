@@ -28,6 +28,9 @@ class UserModel(db.Document):
 
     def follow_organization(self, organization_object):
         self.organizations_following.append(organization_object)
+    
+    def follow_user(self, user_object):
+        self.users_following.append(user_object)
 
     @classmethod
     def find_by_email(cls, email_address):
