@@ -10,11 +10,16 @@ function FeatureIntroGrid({feature, btnText, data}){
     customData = data.news;
     break;
 
+    case 'organization':
+    customData = data.organization;
+    break;
+
     default:
     customData = data.meetups;
   }
 
   if(customData.length > 6){
+    console.log(customData.length);
     customData = customData.slice(0,7);
   }
 

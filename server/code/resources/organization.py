@@ -11,7 +11,7 @@ class OrganizationName(Resource):
       return {'message': 'Organization not found'}, 404
 
 class Organizations(Resource):
-     
+
      # GET method
      def get(self):
-        return {'organizations': [organization.json() for organization in OrganizationModel.objects()]}
+        return [organization.json() for organization in OrganizationModel.objects()]

@@ -1,5 +1,5 @@
 
-export async function setNewsInitial(){
+export async function getNewsInitial(){
   const newsOptions = {
     'method': 'POST',
     'body': JSON.stringify({type: 'business'}),

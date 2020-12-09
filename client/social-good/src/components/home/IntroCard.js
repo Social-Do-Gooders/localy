@@ -5,15 +5,21 @@ function IntroCard({feature, id, item}){
   const history = useHistory();
 
   let cardTitle;
-  let handleOnClick;
-  let imgSrc = item.imgUrl? item.imgUrl: defaultImg;
+  let handleOnClick = defaultOnClick;
+  let imgSrc;
 
   if(feature === 'news'){
     cardTitle = item.newsTitle;
+    imgSrc = item.imgUrl? item.imgUrl: defaultImg;
     handleOnClick = newsOnClick;
+
+  }else if(feature === 'organization'){
+    cardTitle = item.name;
+    imgSrc = item.image_url;
+
   }else{
     cardTitle = 'Name of object';
-    handleOnClick = defaultOnClick
+    imgSrc = defaultImg;
   }
 
   function newsOnClick(){
@@ -21,7 +27,11 @@ function IntroCard({feature, id, item}){
   }
 
   function defaultOnClick(){
-    history.push(`${feature}/${id}`);
+    let param = feature === 'organization'? item.name: id;
+    history.push({
+      pathname: `${feature}/${param}`,
+      state: {item}
+    });
   }
 
   const max = 30;
