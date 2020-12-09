@@ -11,8 +11,9 @@ from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
 
-# importing requests package 
-import requests    
+# importing requests, json package 
+import requests  
+import json  
 
 
 #### API 
@@ -61,6 +62,15 @@ def newsJSON(newsType):
 def news(query):
     print('query =',str(query),sep=' ')
     return newsJSON(query)
+
+#Incase of no query provided
+@app.route('/news/')
+def emptyquery():
+    print('empty query')
+    return json.dumps([{
+        'status' : 'No response',
+        'error' : 'Empty query'
+    }])
 
 # Run app
 if __name__ == "__main__":
