@@ -2,6 +2,7 @@ from faker import Faker
 import random
 
 from models.user import UserModel
+from models.organization import OrganizationModel
 
 
 # initialize Faker
@@ -11,7 +12,7 @@ fake = Faker()
 users = []
 
 # generate users
-for _ in range(10):
+for _ in range(20):
 
     # generate user
     user = {}
@@ -30,4 +31,30 @@ for _ in range(10):
     user_model = UserModel(**user)
     users.append(user_model)
 
-print(users)
+# initialize list
+organizations = []
+organization_type = ['business', 'school', 'hospital', 'orphanage', 'other']
+
+# generate organizations
+for _ in range(10):
+
+    # generate organization
+    organization = {}
+    organization['name'] = fake.company()
+    #organization['owner'] = fake.name()
+    organization['address'] = fake.address()
+    organization['about'] = fake.text()
+    organization['followers'] = []
+    #organization['followers'] = [fake.name() for _ in range(random.randint(1, 5))]
+    organization['image_url'] = fake.image_url()
+    organization['organization_type'] = organization_type[random.randint(0, len(organization_type)-1)]
+
+    # append to list
+    organization_model = OrganizationModel(**organization)
+    organizations.append(organization_model)
+
+
+
+print([f"{user.first_name} {user.last_name}" for user in users])
+print('\n')
+print([organization.name for organization in organizations])
