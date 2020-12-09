@@ -6,6 +6,10 @@
 }
 
 /* Header component */
+.logo{
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+}
 .header-item{
   padding-left: 10%;
   padding-right: 10%;
