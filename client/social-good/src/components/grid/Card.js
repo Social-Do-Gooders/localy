@@ -1,12 +1,30 @@
 import {useHistory} from 'react-router-dom';
+import defaultImg from '../../images/carousel/placeholder1.jpg';
 
-function Card({feature, imgSrc, title, id}){
+function Card({feature, item, id}){
   let history = useHistory();
 
-  let max = 50;
-  let cardTitle = title.length > max? title.substr(0, max) + "..." : title;
+  let cardTitle;
+  let handleOnClick;
+  let imgSrc = item.imgUrl? item.imgUrl: defaultImg;
+  let dummyTitle = "Aliquam ligula libero nunc at mi viverra tincidunt.";
 
-  function handleOnClick(){
+  if(feature === 'news'){
+    cardTitle = item.newsTitle;
+    handleOnClick = newsOnClick;
+  }else{
+    cardTitle = dummyTitle;
+    handleOnClick = defaultOnClick;
+  }
+
+  let max = 50;
+  cardTitle = cardTitle.length > max? cardTitle.substr(0, max) + "..." : cardTitle;
+
+  function newsOnClick(){
+    window.open(item.newsUrl, '_blank');
+  }
+
+  function defaultOnClick(){
     history.push(`${feature}/${id}`);
   }
 
