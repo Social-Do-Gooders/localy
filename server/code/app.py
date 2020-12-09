@@ -1,5 +1,5 @@
 #### IMPORT
-
+import os
 # python imports
 from flask import Flask
 from flask_restful import Api
@@ -11,6 +11,12 @@ from resources.article import Articles
 from resources.fund import Funds
 from resources.event import Events
 
+# importing requests package 
+import requests    
+
+
+#### API 
+SECRET_API_KEY = os.getenv("REACT_APP_NEWS_API_KEY")
 #### APP SETUP
 app = Flask(__name__)
 
@@ -29,6 +35,32 @@ api.add_resource(Articles, '/articles')
 api.add_resource(Funds, '/funds')
 api.add_resource(Events, '/events')
 
+  
+# Fetch Articles 
+def newsJSON(newsType): 
+      
+    #news api 
+    main_url = "https://newsapi.org/v2/everything?q="+newsType+"&sortBy=publishedAt&apiKey="+SECRET_API_KEY
+    
+    articles = []
+    # fetching data in json format 
+    data = requests.get(main_url).json()
+    # return an array of objects
+    for allArticles in data['articles'] :
+        news = {
+            'newsTitle' : allArticles['title'],
+            'newsUrl' : allArticles['url'],
+            'imgUrl': allArticles['urlToImage']
+        } 
+        articles.append(news)
+    
+
+    return articles
+
+@app.route('/news/<query>')
+def news(query):
+    print('query =',str(query),sep=' ')
+    return newsJSON(query)
 
 # Run app
 if __name__ == "__main__":
