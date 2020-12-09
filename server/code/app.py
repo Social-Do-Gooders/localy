@@ -17,7 +17,7 @@ import json
 
 
 #### API 
-SECRET_API_KEY = os.getenv("REACT_APP_NEWS_API_KEY")
+REACT_APP_NEWS_API_KEY=os.environ.get("REACT_APP_NEWS_API_KEY")
 #### APP SETUP
 app = Flask(__name__)
 
@@ -41,7 +41,7 @@ api.add_resource(Events, '/events')
 def newsJSON(newsType): 
       
     #news api 
-    main_url = "https://newsapi.org/v2/everything?q="+newsType+"&sortBy=publishedAt&apiKey="+SECRET_API_KEY
+    main_url = "https://newsapi.org/v2/everything?q="+newsType+"&sortBy=publishedAt&apiKey="+REACT_APP_NEWS_API_KEY
     
     articles = []
     # fetching data in json format 
@@ -55,16 +55,16 @@ def newsJSON(newsType):
         } 
         articles.append(news)
     
+    
+    return json.dumps(articles)
 
-    return articles
-
-@app.route('server/news/<query>',method='POST')
+@app.route('/server/news/<query>',methods=['GET','POST'])
 def news(query):
     print('query =',str(query),sep=' ')
     return newsJSON(query)
 
 #Incase of no query provided
-@app.route('server/news/',method='POST')
+@app.route('/server/news/',methods=['GET','POST'])
 def emptyquery():
     print('empty query')
     return json.dumps([{
