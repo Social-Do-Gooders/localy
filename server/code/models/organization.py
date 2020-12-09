@@ -2,15 +2,18 @@ from db import db
 
 class OrganizationModel(db.Document):
 
-    name = db.StringField(required=True)
-    owner = db.StringField(required=True)
-    address = db.StringField(required=True, unique=True)
-    about = db.StringField(required=True)
+    name = db.StringField(required=True, unique=True)
+    owner = db.StringField()
+    address = db.StringField()
+    about = db.StringField()
     followers = db.ListField(default=[])
-    image = db.StringField()
-    organization_type = db.StringField()
+    image_url = db.StringField()
+    organization_type = db.StringField(default='other', choices=['business', 'school', 'hospital', 'orphanage', 'other'])
   
     meta = {'collection': 'organizations'}
+
+    def json(self):
+        return self.to_json()
 
     def save_to_db(self):
         self.save()

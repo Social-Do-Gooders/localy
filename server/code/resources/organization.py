@@ -32,4 +32,4 @@ class Organizations(Resource):
      
      # GET method
      def get(self):
-         return {'organizations': organizations}
+        return {'organizations': [organization.json() for organization in OrganizationModel.objects()]}
