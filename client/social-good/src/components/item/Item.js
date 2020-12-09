@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useParams, useLocation} from 'react-router-dom';
-import placeholder1 from '../../images/carousel/placeholder1.jpg';
+import placeholder1 from '../../images/general/placeholder1.jpg';
 
 function Item(){
 

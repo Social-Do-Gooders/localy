@@ -1,33 +1,50 @@
 import {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import Pagination from '@material-ui/lab/Pagination';
 import Card from './Card';
 import Loading from '../utils/Loading';
 import {setNewsData} from '../../controllers/news';
+import {loading} from '../../store/actions/loading';
+import {setOrgs} from '../../store/actions/organization';
 
 function CardGrid({feature}){
+  let dummyData = [1,2,3,4,5,6];
 
   let state = useSelector(state => state);
   let dispatch = useDispatch();
-  let [first, setFirst] = useState(false);
-  let dummyData = [1,2,3,4,5,6];
+  let [first, setFirst] = useState({org: false, meetup: false, news: false});
   let data = dummyData;
 
-  if(state[feature]){
-    data = state[feature];
-  }else{
-    data = dummyData;
+  if(feature === 'news'){
+    if(state.news){
+      data = state.news;
+    }
+    if(!first.news){
+      setNewsData(dispatch, 'business');
+      setFirst({...first, news: true});
+    }
+  }else if(feature === 'organization'){
+    if(state.organization){
+      data = state.organization.filter;
+    }
+    if(!first.org){
+      getOrgs();
+    }
+
   }
 
-  if(feature === 'news' && !first){
-    setNewsData(dispatch, 'business');
-    setFirst(true);
+  async function getOrgs(){
+    dispatch(loading(true));
+    let response = await fetch('/server/organization');
+    let orgList = await response.json();
+    setFirst({...first, org: true});
+    dispatch(setOrgs(orgList));
+    dispatch(loading(false));
   }
 
-  if(state.loading && feature === 'news'){
+
+  if(state.loading){
     return <Loading />
   }
-
 
   return(
     <div className='app-container'>
@@ -39,7 +56,6 @@ function CardGrid({feature}){
 
       </div>
 
-      {feature !== 'news' && <Pagination className='pagination' count={2} />}
     </div>
   )
 }

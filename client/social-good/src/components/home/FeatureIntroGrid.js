@@ -19,7 +19,6 @@ function FeatureIntroGrid({feature, btnText, data}){
   }
 
   if(customData.length > 6){
-    console.log(customData.length);
     customData = customData.slice(0,7);
   }
 
