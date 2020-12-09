@@ -1,7 +1,5 @@
 import json
 from db import db
-from models.organization import OrganizationModel
-from models.service import ServiceModel
 
 class UserModel(db.Document):
 
@@ -9,9 +7,9 @@ class UserModel(db.Document):
     last_name = db.StringField(required=True)
     email_address = db.EmailField(required=True, unique=True)
     password = db.StringField(required=True)
-    organizations_following = db.ListField(db.ReferenceField(OrganizationModel), default=[])
-    users_following = db.ListField(db.ReferenceField("self"), default=[])
-    services = db.ListField(db.ReferenceField(ServiceModel), default=[])
+    organizations_following = db.ListField(default=[])
+    users_following = db.ListField(default=[])
+    services = db.ListField(default=[])
   
     meta = {'collection': 'users'}
 
