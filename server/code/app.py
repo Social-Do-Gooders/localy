@@ -58,13 +58,13 @@ def newsJSON(newsType):
 
     return articles
 
-@app.route('/news/<query>')
+@app.route('server/news/<query>',method='POST')
 def news(query):
     print('query =',str(query),sep=' ')
     return newsJSON(query)
 
 #Incase of no query provided
-@app.route('/news/')
+@app.route('server/news/',method='POST')
 def emptyquery():
     print('empty query')
     return json.dumps([{
