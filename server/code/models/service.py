@@ -14,3 +14,7 @@ class ServiceModel(db.Document):
 
     def delete_from_db(self):
         self.delete()
+
+    @classmethod
+    def find_by_name(cls, name):
+        return ServiceModel.objects(name=name)
