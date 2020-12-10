@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import Carousel from './Carousel';
 import HomeFeatures from './HomeFeatures';
 import Loading from '../utils/Loading';
-import {setNewsInitial} from '../../controllers/home';
+import {getNewsInitial} from '../../controllers/home';
 
 function Home(){
   let dummyData = [1,2,3,4,5,6];
@@ -10,8 +10,11 @@ function Home(){
   let [data, setData] = useState({organization: dummyData, meetups: dummyData, news: dummyData});
 
   async function initial(){
-    let newsList = await setNewsInitial();
-    setData({...data, news: newsList});
+    let newsList = await getNewsInitial();
+    let orgJson = await fetch('/server/organization');
+    let orgList = await orgJson.json();
+
+    setData({...data, organization: orgList, news: newsList});
     setLoad(false);
   }
 

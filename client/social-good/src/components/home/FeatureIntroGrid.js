@@ -10,6 +10,10 @@ function FeatureIntroGrid({feature, btnText, data}){
     customData = data.news;
     break;
 
+    case 'organization':
+    customData = data.organization;
+    break;
+
     default:
     customData = data.meetups;
   }

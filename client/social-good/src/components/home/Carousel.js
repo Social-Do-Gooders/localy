@@ -1,6 +1,6 @@
-import placeholder1 from '../../images/carousel/placeholder1.jpg';
-import placeholder2 from '../../images/carousel/placeholder2.jpg';
-import placeholder3 from '../../images/carousel/placeholder3.jpg';
+import fund from '../../images/carousel/fund.jpg';
+import meetup from '../../images/carousel/meetup.jpg';
+import news from '../../images/carousel/news.jpg';
 
 
 function Carousel(){
@@ -10,19 +10,19 @@ function Carousel(){
     <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={placeholder1} loading='lazy' className="carousel-img" alt="placeholder"/>
+          <img src={fund} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div className="carousel-caption d-none d-md-block">
             <h5>Help a local organizations with funding</h5>
           </div>
         </div>
         <div className="carousel-item">
-          <img src={placeholder2} loading='lazy' className="carousel-img" alt="placeholder"/>
+          <img src={meetup} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div className="carousel-caption d-none d-md-block">
             <h5>Attend knowledge sharing meetups in your locality</h5>
           </div>
         </div>
         <div className="carousel-item">
-          <img src={placeholder3} loading='lazy' className="carousel-img" alt="placeholder"/>
+          <img src={news} loading='lazy' className="carousel-img" alt="placeholder"/>
           <div className="carousel-caption d-none d-md-block">
             <h5>Get caught up with the latest business news</h5>
           </div>

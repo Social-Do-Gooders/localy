@@ -1,8 +1,13 @@
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {setNewsData} from '../../controllers/news';
+import {filterOrgs} from '../../store/actions/organization';
 
 function FilterItem({item, feature}){
   const dispatch = useDispatch();
+  let orgs = useSelector(state => state.organization);
+  if(orgs){
+    orgs = orgs.primary;
+  }
 
   let handleOnClick;
   let customTitle;
@@ -13,11 +18,22 @@ function FilterItem({item, feature}){
 
   }else{
     customTitle = item;
-    handleOnClick = defaultOnClick;
+    if(feature === 'organization'){
+      handleOnClick = orgsOnClick;
+    }else{
+      handleOnClick = defaultOnClick;
+    }
   }
 
   function newsOnClick(){
     setNewsData(dispatch, item);
+  }
+
+  function orgsOnClick(){
+    if(orgs){
+      orgs = orgs.filter(value => value.organization_type === item);
+      dispatch(filterOrgs(orgs));
+    }
   }
 
   function defaultOnClick(){
