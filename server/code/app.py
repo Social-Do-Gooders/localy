@@ -1,9 +1,8 @@
 #### IMPORT
 import os
 # python imports
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_restful import Api
-from flask_cors import CORS
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -22,8 +21,7 @@ import requests
 import json
 
 #### APP SETUP
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__, static_folder="./build/static", template_folder="./build")
 # config db to app
 app.config['MONGODB_SETTINGS'] = {
     'host': os.environ.get('DB_URI')
@@ -37,7 +35,7 @@ NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 #### API
 @app.route('/')
 def index():
-    return 'Hello World'
+    return render_template('index.html')
 
 api.add_resource(Users, '/server/users')
 api.add_resource(OrganizationName, '/server/organization/<string:name>')
