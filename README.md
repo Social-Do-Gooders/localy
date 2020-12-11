@@ -7,6 +7,7 @@
 	- [React.js](#-reactjs)
 	- [Flask](#-flask)
 	- [MongoDB Atlas](#-mongodb-atlas)
+	- [Heroku](#-heroku)
 - [Contributors](#-contributors)
 
 ## ⚡️ Introduction
@@ -27,7 +28,8 @@ In a future version, we hope to incorporate the following features
 ## 🚀 Demo
 
 Check out the site here: https://localyapp.herokuapp.com/
-See a demo of the site here:
+
+See a demo of the site here: https://youtu.be/GnaCwPFsrC4
 
 ![Demo](demo.gif)
 
@@ -54,6 +56,9 @@ The serverside was built with Flask, a lightweight Python web development librar
 
 For a database, we used MongoDB Atlas, a cloud NoSQL database. In order to carry out CRUD functionalities to maintain database content we used Flask-MongoEngine, an ODM (Object Document Mapper; see Flask section above).
 
+### 🎒 Heroku
+
+We deployed our site using Heroku.
 
 ## 💻 Contributors
 
