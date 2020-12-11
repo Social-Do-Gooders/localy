@@ -24,6 +24,7 @@ At the moment, Localy provides following features to its users
 In a future version, we hope to incorporate the following features
 - view and attend local meetups
 - engage with other users/organizations via social media functionality
+- filter results based on proximity to current location
 
 ## 🚀 Demo
 
