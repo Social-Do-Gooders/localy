@@ -4,6 +4,7 @@ import os
 from flask import Flask, request, render_template
 from flask_restful import Api
 from dotenv import load_dotenv
+import waitress
 load_dotenv()
 
 
@@ -15,7 +16,6 @@ from resources.fund import Funds
 from resources.event import Events
 from resources.service import Services
 from db import db
-
 # importing requests, json package
 import requests
 import json
@@ -73,4 +73,6 @@ def news():
 
 # Run app
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.debug = False
+    port = int(os.environ.get('PORT', 33507))
+    waitress.serve(app, port=port)
