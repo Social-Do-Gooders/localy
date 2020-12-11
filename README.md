@@ -27,7 +27,9 @@ In a future version, we hope to incorporate the following features
 ## 🚀 Demo
 
 Check out the site here: https://localyapp.herokuapp.com/
-See a demo of the site here: [INSERT DEMO HERE]
+See a demo of the site here:
+
+![Demo](demo.gif)
 
 
 ## 👨🏻‍💻 Technologies
